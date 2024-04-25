@@ -15,7 +15,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import { Button } from '@mui/material';
+import { Button, useMediaQuery } from '@mui/material';
 
 //22-25 arasındaki videolara bakarak  menu cesitlendirilebilir
 
@@ -67,6 +67,64 @@ export const Navbar = () => {
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+    const ResponsiveToolbar = () => {
+        const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+        const [anchorEl, setAnchorEl] = React.useState(null);
+
+        const handleClick = (event) => {
+            setAnchorEl(event.currentTarget);
+        };
+
+        const handleClose = () => {
+            setAnchorEl(null);
+        };
+
+        if (!isSmallScreen) {
+            return (
+                <Typography variant="h6" noWrap component="div">
+                    <Button sx={{ color: 'inherit' }}>Ürünler</Button>
+                    <Button sx={{ color: 'inherit' }}>Hakkımızda</Button>
+                    <Button sx={{ color: 'inherit' }}>Container</Button>
+                    <Button sx={{ color: 'inherit' }}>Container</Button>
+                    <Button sx={{ color: 'inherit' }}>Container</Button>
+                    <Button sx={{ color: 'inherit' }}>Blog</Button>
+                </Typography>
+            );
+        }
+
+        return (
+            <Typography variant="h6" noWrap component="div">
+                <Button sx={{ color: 'inherit' }} onClick={handleClick}>
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="open drawer"
+                        sx={{ mr: 2 }}
+
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                </Button>
+
+                <Menu
+                    anchorEl={anchorEl}
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                >
+                    <MenuItem onClick={handleClose}>Ürünler</MenuItem>
+                    <MenuItem onClick={handleClose}>Hakkımızda</MenuItem>
+                    <MenuItem onClick={handleClose}>Container</MenuItem>
+                    <MenuItem onClick={handleClose}>Container</MenuItem>
+                    <MenuItem onClick={handleClose}>Container</MenuItem>
+                    <MenuItem onClick={handleClose}>Blog</MenuItem>
+                </Menu>
+            </Typography>
+        );
+    };
+
+
+
     const handleProfileMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -83,6 +141,7 @@ export const Navbar = () => {
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
+
 
     const menuId = 'primary-search-account-menu';
     const renderMenu = (
@@ -158,21 +217,17 @@ export const Navbar = () => {
         </Menu>
     );
 
+
+
+
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{ height: 125, }} color='primary' >
                 {/*yumusak renkler icin https://mui.com/material-ui/customization/color/#picking-colors 'e bak */}
 
                 <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
-                        sx={{ mr: 2 }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
+
                     <Typography
                         variant="h6"
                         noWrap
@@ -191,6 +246,7 @@ export const Navbar = () => {
                         />
                     </Search>
                     <Box sx={{ flexGrow: 1 }} >space</Box>{/*aradaki bosluk bu box ile verilmis */}
+
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="error">
@@ -231,22 +287,8 @@ export const Navbar = () => {
                         </IconButton>
                     </Box>
                 </Toolbar>
-                <Toolbar>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        <Button sx={{ color: 'inherit' }}>Ürünler</Button>
-                        <Button sx={{ color: 'inherit' }}>Hakkımızda</Button>{/*arka plan rengi degismiyor muhtemelen ustte biyerde engelleniyor ona daha sonra bak !! */}
-                        <Button sx={{ color: 'inherit' }}>container</Button>
-                        <Button sx={{ color: 'inherit' }}>container</Button>
-                        <Button sx={{ color: 'inherit' }}>container</Button>
+                <Toolbar> <ResponsiveToolbar /></Toolbar>
 
-                        <Button sx={{ color: 'inherit' }}>Blog</Button>
-
-                    </Typography>
-                </Toolbar>
             </AppBar>
             {renderMobileMenu}
             {renderMenu}
