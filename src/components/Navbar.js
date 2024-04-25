@@ -15,7 +15,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import { Button, useMediaQuery } from '@mui/material';
+import { Button, Drawer, useMediaQuery } from '@mui/material';
 
 //22-25 arasındaki videolara bakarak  menu cesitlendirilebilir
 
@@ -70,9 +70,11 @@ export const Navbar = () => {
     const ResponsiveToolbar = () => {
         const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
         const [anchorEl, setAnchorEl] = React.useState(null);
+        const [isDrawerOpen, setisDrawerOpen] = React.useState(false);
 
         const handleClick = (event) => {
             setAnchorEl(event.currentTarget);
+            setisDrawerOpen(true);
         };
 
         const handleClose = () => {
@@ -93,6 +95,7 @@ export const Navbar = () => {
         }
 
         return (
+
             <Typography variant="h6" noWrap component="div">
                 <Button sx={{ color: 'inherit' }} onClick={handleClick}>
                     <IconButton
@@ -106,20 +109,27 @@ export const Navbar = () => {
                         <MenuIcon />
                     </IconButton>
                 </Button>
+                <Drawer anchor="left" open={isDrawerOpen} onClick={() => setisDrawerOpen(false)}>
+                    <Box p={2} width="250px" textAlign="center" role="presentation">
+                        {/* 
+                        <Menu
+                            anchorEl={anchorEl}
+                            open={Boolean(anchorEl)}
+                            onClose={handleClose}
+                        > */}
+                        <MenuItem onClick={handleClose}>Ürünler</MenuItem>
+                        <MenuItem onClick={handleClose}>Hakkımızda</MenuItem>
+                        <MenuItem onClick={handleClose}>Container</MenuItem>
+                        <MenuItem onClick={handleClose}>Container</MenuItem>
+                        <MenuItem onClick={handleClose}>Container</MenuItem>
+                        <MenuItem onClick={handleClose}>Blog</MenuItem>
+                        {/* </Menu> */}
 
-                <Menu
-                    anchorEl={anchorEl}
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                >
-                    <MenuItem onClick={handleClose}>Ürünler</MenuItem>
-                    <MenuItem onClick={handleClose}>Hakkımızda</MenuItem>
-                    <MenuItem onClick={handleClose}>Container</MenuItem>
-                    <MenuItem onClick={handleClose}>Container</MenuItem>
-                    <MenuItem onClick={handleClose}>Container</MenuItem>
-                    <MenuItem onClick={handleClose}>Blog</MenuItem>
-                </Menu>
+                    </Box>
+
+                </Drawer>
             </Typography>
+
         );
     };
 
