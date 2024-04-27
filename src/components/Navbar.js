@@ -235,6 +235,40 @@ export const Navbar = () => {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{ height: 125, }} color='primary' >
                 {/*yumusak renkler icin https://mui.com/material-ui/customization/color/#picking-colors 'e bak */}
+                <Toolbar sx={{ justifyContent: 'space-between' }} > <ResponsiveToolbar />
+
+                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                            <Badge badgeContent={4} color="error">
+                                {/* <Box sx={{ fontSize: "18px" }}>mail</Box> */}
+                                <MailIcon />
+                            </Badge>
+                        </IconButton>
+                        <IconButton
+                            size="large"
+                            aria-label="show 17 new notifications"
+                            color="inherit"
+                        >
+                            <Badge badgeContent={17} color="error">
+                                {/* <Box sx={{ fontSize: "18px" }}>notification</Box> */}
+
+                                <NotificationsIcon />
+                            </Badge>
+                        </IconButton>
+                        <IconButton
+                            size="large"
+                            edge="end"
+                            aria-label="account of current user"
+                            aria-controls={menuId}
+                            aria-haspopup="true"
+                            onClick={handleProfileMenuOpen}
+                            color="inherit"
+                        >
+                            <Box sx={{ fontSize: "18px" }}>user</Box>
+                            <AccountCircle />
+                        </IconButton>
+                    </Box>
+                </Toolbar>
 
                 <Toolbar>
 
@@ -257,34 +291,9 @@ export const Navbar = () => {
                     </Search>
                     <Box sx={{ flexGrow: 1 }} >space</Box>{/*aradaki bosluk bu box ile verilmis */}
 
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                            <Badge badgeContent={4} color="error">
-                                <MailIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton
-                            size="large"
-                            aria-label="show 17 new notifications"
-                            color="inherit"
-                        >
-                            <Badge badgeContent={17} color="error">
-                                <NotificationsIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton
-                            size="large"
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
-                            <AccountCircle />
-                        </IconButton>
-                    </Box>
-                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+
+
+                    <Box sx={{ display: { xs: 'flex', md: 'none' } }} /*bu box ne ise yarıyor?? */>
                         <IconButton
                             size="large"
                             aria-label="show more"
@@ -297,8 +306,6 @@ export const Navbar = () => {
                         </IconButton>
                     </Box>
                 </Toolbar>
-                <Toolbar> <ResponsiveToolbar /></Toolbar>
-
             </AppBar>
             {renderMobileMenu}
             {renderMenu}

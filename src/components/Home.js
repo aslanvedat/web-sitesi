@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Navbar } from "./Navbar"
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { useState, useEffect } from 'react';
+import { ProductBar } from "./ProductBar";
 export const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
@@ -26,11 +27,16 @@ export const Home = () => {
     const goToPrevSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
     };
+
+
+
+
     return (
         <Box >
             <Navbar />
             <Box component="div" /*sx={{ background: "red", width: "10% !important", height: "100% !important" }}*/>
             </Box>
+
 
             <Box sx={{ width: 400, margin: 'auto', textAlign: 'center' }}>
                 <Typography variant="h5" gutterBottom>
@@ -44,7 +50,7 @@ export const Home = () => {
                     Sonraki
                 </Button>
             </Box>
-
+            <ProductBar />
 
             {/*Breadcrumbs ici sonra siteye uygun sekilde duzenlenmeli */}
             <Box m={2}>
@@ -167,6 +173,7 @@ export const Home = () => {
                     </Grid>
                 </Paper>
             </Box>
+
         </Box>
     )
 }
