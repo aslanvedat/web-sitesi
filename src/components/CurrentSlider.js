@@ -1,4 +1,4 @@
-import { Box, Typography, Button } from "@mui/material"
+import { Box, Typography, Button, Slide, Transition } from "@mui/material"
 import React from 'react'
 import { useState, useEffect } from 'react';
 export const CurrentSlider = () => {
@@ -28,17 +28,25 @@ export const CurrentSlider = () => {
 
     return (
 
-        <Box sx={{ width: 400, margin: 'auto', textAlign: 'center' }}>
+        <Box sx={{
+            width: "90%", height: "70vh", mb: "10vh", mt: "2vh", textAlign: 'center'/*mb :margin-bottom ,mt:margin-top */
+        }}>
             <Typography variant="h5" gutterBottom>
                 {slides[currentSlide].title}
             </Typography>
-            <img src={slides[currentSlide].img} alt={slides[currentSlide].title} style={{ width: '100%', maxHeight: '300px' }} />
-            <Button onClick={goToPrevSlide} disabled={currentSlide === 0}>
-                Önceki
-            </Button>
-            <Button onClick={goToNextSlide} disabled={currentSlide === slides.length - 1}>
-                Sonraki
-            </Button>
-        </Box>
+
+
+            <Slide key={currentSlide} direction="right" in={true} timeout={1500}>
+                <img src={slides[currentSlide].img} alt={slides[currentSlide].title} style={{ width: '80%', maxHeight: "60vh" }} />
+            </Slide>
+            <Box >
+                <Button onClick={goToPrevSlide} disabled={currentSlide === 0}>
+                    Önceki
+                </Button>
+                <Button onClick={goToNextSlide} disabled={currentSlide === slides.length - 1}>
+                    Sonraki
+                </Button>
+            </Box>
+        </Box >
     )
 }
