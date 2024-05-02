@@ -20,10 +20,10 @@ export const Home = () => {
 
             <CurrentSlider />
 
-            <ProductBar />
+
 
             {/*Breadcrumbs ici sonra siteye uygun sekilde duzenlenmeli */}
-            <Box m={2}>
+            <Box m={2} padding={2}>
                 {/* <Breadcrumbs aria-label="breadcrumb" separator="-"> */}
                 <Breadcrumbs aria-label="breadcrumb" separator={<NavigateNextIcon fontSize="small" />}
                     maxItems={3} itemsAfterCollapse={2} >
@@ -35,7 +35,7 @@ export const Home = () => {
             </Box>
 
 
-
+            <ProductBar />
 
 
 

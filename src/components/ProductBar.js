@@ -21,12 +21,120 @@ export const ProductBar = () => {
 
     if (!isSmallScreen) {
         return (
-            <Box>
+            <Box sx={{ mb: "2vh" }}>
+                <Grid container justifyContent="center">
+                    <TabContext value={value}>
+                        <Box sx={{ borderBottom: 1, borderColor: "divider", width: "90%" }} >
+                            <TabList aria-label="Tabs example" onChange={handleChange} textColor="secondary" variant="scrollable" scrollButtons="auto">
+
+                                <Box width={"24%"} sx={{ paddingRight: 2, paddingLeft: 2 }} >
+                                    <Card>
+
+                                        <CardMedia component={"img"} height={"140"} image="http://source.unsplash.com/random" alt="unsplash image" />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component={"div"} >React</Typography>
+                                            <Typography variant="body2" color={"text.secondary"}>
+                                                1  Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia corporis fugit non quo necessitatibus illo repudiandae modi, eaque doloribus. Enim quasi maiores fuga vitae ea? Suscipit voluptas pariatur totam quas.
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions>
+                                            <Button size="small">Learn more</Button>
+
+                                        </CardActions>
+                                    </Card>
+                                </Box>
+
+                                <Box width={"24%"} sx={{ paddingRight: 2, paddingLeft: 2 }} >
+                                    <Card>
+
+                                        <CardMedia component={"img"} height={"140"} image="http://source.unsplash.com/random" alt="unsplash image" />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component={"div"} >React</Typography>
+                                            <Typography variant="body2" color={"text.secondary"}>
+                                                2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia corporis fugit non quo necessitatibus illo repudiandae modi, eaque doloribus. Enim quasi maiores fuga vitae ea? Suscipit voluptas pariatur totam quas.
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions>
+                                            <Button size="small">Learn more</Button>
+
+                                        </CardActions>
+                                    </Card>
+                                </Box>
+                                <Box width={"24%"} sx={{ paddingRight: 2, paddingLeft: 2 }}>
+                                    <Card>
+                                        <CardMedia component={"img"} height={"140"} image="http://source.unsplash.com/random" alt="unsplash image" />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component={"div"} >React</Typography>
+                                            <Typography variant="body2" color={"text.secondary"}>
+                                                3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia corporis fugit non quo necessitatibus illo repudiandae modi, eaque doloribus. Enim quasi maiores fuga vitae ea? Suscipit voluptas pariatur totam quas.
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions>
+                                            <Button size="small">Learn more</Button>
+                                        </CardActions>
+                                    </Card>
+                                </Box>
+                                <Box width={"24%"} sx={{ paddingRight: 2, paddingLeft: 2 }}>
+                                    <Card>
+                                        <CardMedia component={"img"} height={"140"} image="http://source.unsplash.com/random" alt="unsplash image" />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component={"div"} >React</Typography>
+                                            <Typography variant="body2" color={"text.secondary"}>
+                                                4   Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia corporis fugit non quo necessitatibus illo repudiandae modi, eaque doloribus. Enim quasi maiores fuga vitae ea? Suscipit voluptas pariatur totam quas.
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions>
+                                            <Button size="small">Learn more</Button>
+
+                                        </CardActions>
+                                    </Card>
+                                </Box>
+                                <Box width={"24%"} sx={{ paddingRight: 2, paddingLeft: 2 }}>
+                                    <Card>
+                                        <CardMedia component={"img"} height={"140"} image="http://source.unsplash.com/random" alt="unsplash image" />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component={"div"} >React</Typography>
+                                            <Typography variant="body2" color={"text.secondary"}>
+                                                5  Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia corporis fugit non quo necessitatibus illo repudiandae modi, eaque doloribus. Enim quasi maiores fuga vitae ea? Suscipit voluptas pariatur totam quas.
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions>
+                                            <Button size="small">Learn more</Button>
+
+                                        </CardActions>
+                                    </Card>
+                                </Box>
+                                <Box width={"24%"} sx={{ paddingRight: 2, paddingLeft: 2 }}>
+                                    <Card>
+                                        <CardMedia component={"img"} height={"140"} image="http://source.unsplash.com/random" alt="unsplash image" />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component={"div"} >React</Typography>
+                                            <Typography variant="body2" color={"text.secondary"}>
+                                                6  Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia corporis fugit non quo necessitatibus illo repudiandae modi, eaque doloribus. Enim quasi maiores fuga vitae ea? Suscipit voluptas pariatur totam quas.
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions>
+                                            <Button size="small">Learn more</Button>
+
+                                        </CardActions>
+                                    </Card>
+                                </Box>
+                            </TabList>
+                        </Box>
+                    </TabContext>
+                </Grid>
+            </Box>
+        )
+    }
+
+    return (
+        <Box sx={{ mb: "2vh" }}>
+            <Grid container justifyContent="center">
                 <TabContext value={value}>
-                    <Box sx={{ borderBottom: 1, borderColor: "divider", width: "%90" }}>
+                    <Box sx={{ borderBottom: 1, borderColor: "divider", width: "90%" }} >
                         <TabList aria-label="Tabs example" onChange={handleChange} textColor="secondary" variant="scrollable" scrollButtons="auto">
 
-                            <Box width={"300px"} sx={{ paddingRight: 2, paddingLeft: 2 }} >
+                            <Box width={"44%"} sx={{ paddingRight: 2, paddingLeft: 2 }} >
                                 <Card>
 
                                     <CardMedia component={"img"} height={"140"} image="http://source.unsplash.com/random" alt="unsplash image" />
@@ -43,7 +151,7 @@ export const ProductBar = () => {
                                 </Card>
                             </Box>
 
-                            <Box width={"300px"} sx={{ paddingRight: 2, paddingLeft: 2 }} >
+                            <Box width={"44%"} sx={{ paddingRight: 2, paddingLeft: 2 }} >
                                 <Card>
 
                                     <CardMedia component={"img"} height={"140"} image="http://source.unsplash.com/random" alt="unsplash image" />
@@ -59,7 +167,7 @@ export const ProductBar = () => {
                                     </CardActions>
                                 </Card>
                             </Box>
-                            <Box width={"300px"} sx={{ paddingRight: 2, paddingLeft: 2 }}>
+                            <Box width={"44%"} sx={{ paddingRight: 2, paddingLeft: 2 }}>
                                 <Card>
                                     <CardMedia component={"img"} height={"140"} image="http://source.unsplash.com/random" alt="unsplash image" />
                                     <CardContent>
@@ -73,7 +181,7 @@ export const ProductBar = () => {
                                     </CardActions>
                                 </Card>
                             </Box>
-                            <Box width={"300px"} sx={{ paddingRight: 2, paddingLeft: 2 }}>
+                            <Box width={"44%"} sx={{ paddingRight: 2, paddingLeft: 2 }}>
                                 <Card>
                                     <CardMedia component={"img"} height={"140"} image="http://source.unsplash.com/random" alt="unsplash image" />
                                     <CardContent>
@@ -88,7 +196,7 @@ export const ProductBar = () => {
                                     </CardActions>
                                 </Card>
                             </Box>
-                            <Box width={"300px"}>
+                            <Box width={"44%"} sx={{ paddingRight: 2, paddingLeft: 2 }}>
                                 <Card>
                                     <CardMedia component={"img"} height={"140"} image="http://source.unsplash.com/random" alt="unsplash image" />
                                     <CardContent>
@@ -102,7 +210,8 @@ export const ProductBar = () => {
 
                                     </CardActions>
                                 </Card>
-                            </Box> <Box width={"300px"} sx={{ paddingRight: 2, paddingLeft: 2 }}>
+                            </Box>
+                            <Box width={"44%"} sx={{ paddingRight: 2, paddingLeft: 2 }}>
                                 <Card>
                                     <CardMedia component={"img"} height={"140"} image="http://source.unsplash.com/random" alt="unsplash image" />
                                     <CardContent>
@@ -120,11 +229,9 @@ export const ProductBar = () => {
                         </TabList>
                     </Box>
                 </TabContext>
-            </Box>
-        )
-    }
-
-
+            </Grid>
+        </Box>
+    )
 
     // return (
     //     <TabContext>

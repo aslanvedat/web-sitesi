@@ -27,7 +27,7 @@ export const CurrentSlider = () => {
     };
 
     return (
-
+        //heigth ile ilgili sorun hala cozulmedi mobil versiyonda hala sorun olusturuyor!!
         <Box sx={{
             width: "90%", height: "70vh", mb: "10vh", mt: "2vh", textAlign: 'center'/*mb :margin-bottom ,mt:margin-top */
         }}>
@@ -37,7 +37,7 @@ export const CurrentSlider = () => {
 
 
             <Slide key={currentSlide} direction="right" in={true} timeout={1500}>
-                <img src={slides[currentSlide].img} alt={slides[currentSlide].title} style={{ width: '80%', maxHeight: "60vh" }} />
+                <img src={slides[currentSlide].img} alt={slides[currentSlide].title} style={{ width: '80%', maxHeight: "70vh" }} />
             </Slide>
             <Box >
                 <Button onClick={goToPrevSlide} disabled={currentSlide === 0}>
