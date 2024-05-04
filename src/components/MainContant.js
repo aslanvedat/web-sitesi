@@ -10,7 +10,7 @@ export const MainContant = () => {
 
 
                 <Grid container my={4} rowSpacing={2} columnSpacing={1} justifyContent="center">{/*spacingler le satir ve sutun aralarina bosluklar veriyoruz */}
-                    <Grid item xs={12} sm={4}>{/*sm sayesinde telefon modunda alt alta siralanir  */}
+                    <Grid item xs={12} sm={3}>{/*sm sayesinde telefon modunda alt alta siralanir  */}
                         <Box bgcolor={"primary.light"} p={2}>
                             <Card>
                                 <CardMedia component={"img"} image="http://source.unsplash.com/random" alt="unsplash image" />
@@ -28,7 +28,7 @@ export const MainContant = () => {
                             </Card>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} sm={3}>
                         <Box bgcolor={"primary.light"} p={2}>
                             <Card>
                                 <CardMedia component={"img"} image="http://source.unsplash.com/random" alt="unsplash image" />
@@ -46,7 +46,7 @@ export const MainContant = () => {
                             </Card>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} sm={3}>
                         <Box bgcolor={"primary.light"} p={2}>  <Card>
                             <CardMedia component={"img"} image="http://source.unsplash.com/random" alt="unsplash image" />
                             <CardContent>
@@ -62,7 +62,7 @@ export const MainContant = () => {
                             </CardActions>
                         </Card></Box>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} sm={3}>
                         <Box bgcolor={"primary.light"} p={2}>  <Card>
                             <CardMedia component={"img"} image="http://source.unsplash.com/random" alt="unsplash image" />
                             <CardContent>
@@ -78,7 +78,7 @@ export const MainContant = () => {
                             </CardActions>
                         </Card></Box>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} sm={3}>
                         <Box bgcolor={"primary.light"} p={2}>  <Card>
                             <CardMedia component={"img"} image="http://source.unsplash.com/random" alt="unsplash image" />
                             <CardContent>
@@ -94,7 +94,7 @@ export const MainContant = () => {
                             </CardActions>
                         </Card></Box>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid item xs={12} sm={3}>
                         <Box bgcolor={"primary.light"} p={2}>  <Card>
                             <CardMedia component={"img"} image="http://source.unsplash.com/random" alt="unsplash image" />
                             <CardContent>

@@ -1,9 +1,9 @@
-import { Box, Typography, Button, Slide, Transition } from "@mui/material"
+import { Box, Typography, Button, Slide, Transition, useTheme } from "@mui/material"
 import React from 'react'
 import { useState, useEffect } from 'react';
 export const CurrentSlider = () => {
 
-
+    const theme = useTheme();
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
         { title: 'Slide 1', img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e' },
@@ -27,9 +27,11 @@ export const CurrentSlider = () => {
     };
 
     return (
-        //heigth ile ilgili sorun hala cozulmedi mobil versiyonda hala sorun olusturuyor!!
         <Box sx={{
-            width: "90%", height: "70vh", mb: "10vh", mt: "2vh", textAlign: 'center'/*mb :margin-bottom ,mt:margin-top */
+            [theme.breakpoints.up('sm')]: {
+                width: "90vw", height: "70vh", mb: "10vh", mt: "2vh", textAlign: 'center'
+            }/*mb :margin-bottom ,mt:margin-top */
+            , [theme.breakpoints.down("sm")]: { width: "90vw", height: "30vh", mt: "2vh", textAlign: "center" }
         }}>
             <Typography variant="h5" gutterBottom>
                 {slides[currentSlide].title}

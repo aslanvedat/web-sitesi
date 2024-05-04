@@ -3,9 +3,9 @@ import * as React from 'react';
 import { Navbar } from "./Navbar"
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { ProductBar } from "./ProductBar";
-import { ProductBar2 } from "./ProductBar2";
 import { MainContant } from "./MainContant";
 import { CurrentSlider } from "./CurrentSlider";
+import { Footer } from "./Footer"
 export const Home = () => {
 
 
@@ -42,7 +42,8 @@ export const Home = () => {
 
             <MainContant />
 
-            <ProductBar2 />
+            <ProductBar />
+            <Footer />
 
         </Box>
     )
