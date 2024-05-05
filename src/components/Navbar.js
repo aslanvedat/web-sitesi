@@ -15,8 +15,8 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import { Button, Drawer, useMediaQuery } from '@mui/material';
-
+import { Button, Drawer, Link, useMediaQuery } from '@mui/material';
+import { Products } from './Products';
 //22-25 arasındaki videolara bakarak  menu cesitlendirilebilir
 
 
@@ -86,7 +86,10 @@ export const Navbar = () => {
                 <Typography variant="h6" noWrap component="div">
                     <Button sx={{ color: 'inherit' }}>Ürünler</Button>
                     <Button sx={{ color: 'inherit' }}>Hakkımızda</Button>
-                    <Button sx={{ color: 'inherit' }}>Container</Button>
+                    {/* alttaki link duzgun calismiyor bi daha bakilmali!!!! */}
+
+                    <Button sx={{ color: 'inherit' }}><Link to="/products">product</Link></Button>
+                    <Link to="/products">product</Link>
                     <Button sx={{ color: 'inherit' }}>Container</Button>
                     <Button sx={{ color: 'inherit' }}>Container</Button>
                     <Button sx={{ color: 'inherit' }}>Blog</Button>
@@ -233,7 +236,7 @@ export const Navbar = () => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={{ height: 125, }} color='primary' >
+            <AppBar position="static" sx={{ height: 125, bgcolor: "#178" }}  >
                 {/*yumusak renkler icin https://mui.com/material-ui/customization/color/#picking-colors 'e bak */}
                 <Toolbar sx={{ justifyContent: 'space-between' }} > <ResponsiveToolbar />
 

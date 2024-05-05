@@ -15,11 +15,10 @@ export const Home = () => {
 
     return (
         <Box >
-            <Navbar />
+
 
 
             <CurrentSlider />
-
 
 
             {/*Breadcrumbs ici sonra siteye uygun sekilde duzenlenmeli */}
@@ -43,7 +42,7 @@ export const Home = () => {
             <MainContant />
 
             <ProductBar />
-            <Footer />
+
 
         </Box>
     )
