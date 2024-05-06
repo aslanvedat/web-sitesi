@@ -15,8 +15,9 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import { Button, Drawer, Link, useMediaQuery } from '@mui/material';
+import { Button, Drawer, useMediaQuery } from '@mui/material';
 import { Products } from './Products';
+import {Link} from "react-router-dom";
 //22-25 arasındaki videolara bakarak  menu cesitlendirilebilir
 
 
@@ -89,7 +90,6 @@ export const Navbar = () => {
                     {/* alttaki link duzgun calismiyor bi daha bakilmali!!!! */}
 
                     <Button sx={{ color: 'inherit' }}><Link to="/products">product</Link></Button>
-                    <Link to="/products">product</Link>
                     <Button sx={{ color: 'inherit' }}>Container</Button>
                     <Button sx={{ color: 'inherit' }}>Container</Button>
                     <Button sx={{ color: 'inherit' }}>Blog</Button>
