@@ -4,8 +4,13 @@ import { MainContant } from './MainContant'
 
 export const Products = () => {
     return (
-        <Box>
-            deneme Products
+        <Box >
+
+            <Box ></Box>
+            <Box>
+                <Box></Box>
+                <Box></Box>
+            </Box>
         </Box>
     )
 }
