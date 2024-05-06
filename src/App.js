@@ -6,6 +6,7 @@ import theme from "./Theme";
 import { Footer } from "./components/Footer";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Products } from "./components/Products";
+import { Breadcrumbss } from "./components/Breadcrumbss";
 
 //boyutlarla alakali 45. videoya bak!!!
 function App() {
@@ -13,7 +14,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <Navbar />
-
+        <Breadcrumbss />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
