@@ -6,11 +6,6 @@ import { MainContant } from "./MainContant";
 import { CurrentSlider } from "./CurrentSlider";
 export const Home = () => {
 
-
-
-
-
-
     return (
         <Box >
             <CurrentSlider />
