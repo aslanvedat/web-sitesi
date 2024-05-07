@@ -5,7 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from "./Theme";
 import { Footer } from "./components/Footer";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { Products } from "./components/Products";
+import { Products } from "./components/products/Products";
 import { Breadcrumbss } from "./components/Breadcrumbss";
 
 //boyutlarla alakali 45. videoya bak!!!

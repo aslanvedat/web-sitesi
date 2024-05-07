@@ -16,8 +16,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Button, Drawer, useMediaQuery } from '@mui/material';
-import { Products } from './Products';
-import {Link} from "react-router-dom";
+import { Products } from './products/Products';
+import { Link } from "react-router-dom";
 //22-25 arasındaki videolara bakarak  menu cesitlendirilebilir
 
 
