@@ -53,7 +53,7 @@ export const ProductsLeftBox2 = () => {
 
 
     return (
-        <Box sx={{ width: "20vw", height: "23vh", overflowY: "scroll", marginTop: "2vh" }}>
+        <Box sx={{ width: "15vw", height: "23vh", overflowY: "scroll", marginTop: "2vh" }}>
             <Search>
                 <SearchIconWrapper>
                     <SearchIcon />

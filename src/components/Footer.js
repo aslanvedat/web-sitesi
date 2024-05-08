@@ -15,7 +15,7 @@ export const Footer = () => {
     const theme = useTheme();
     //paperdaki bgcolor calismiyor ona bak !!!!
     return (
-        <Box >
+        <Box>
             <Paper sx={{ [theme.breakpoints.up('sm')]: { width: "100vw", height: "50vh", bgcolor: "secondary" }, [theme.breakpoints.down("sm")]: { width: "100vw", height: "140vh" }, bgcolor: "#178" }}>
 
 

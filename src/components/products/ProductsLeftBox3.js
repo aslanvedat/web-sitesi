@@ -5,7 +5,7 @@ import { Box, ListItem, List, Typography, ListItemButton, ListItemText, Stack } 
 
 export const ProductsLeftBox3 = () => {
     return (
-        <Box sx={{ width: "20vw", height: "23vh", overflowY: "scroll", mt: "2vh" }}>
+        <Box sx={{ width: "15vw", height: "23vh", overflowY: "scroll", mt: "2vh" }}>
             <Typography>Category2  </Typography>
             <List >
                 {itemData.map(item => (
