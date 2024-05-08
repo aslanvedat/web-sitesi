@@ -4,6 +4,8 @@ import { styled, alpha } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 
+
+//search bar mui resmi web sitesinden alindi
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,

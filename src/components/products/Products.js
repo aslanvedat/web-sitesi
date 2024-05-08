@@ -13,7 +13,7 @@ export const Products = () => {
         <Box >
             <Box sx={{ width: "85vw", height: "102vh", display: "flex", justifyContent: "space-between", marginX: "5vh" }} >
 
-                <Box sx={{ width: "20vw", height: "100vh", bgcolor: "#157" }}>
+                <Box sx={{ width: "20vw", height: "100vh", bgcolor: "#157", overflowY: "scroll" }}>
 
                     {/* <Stack sx={{ height: "20vh", alignItems: "center", p: "1vh", columns: "1", rowHeight: "2vh" }}  >
 
@@ -21,6 +21,11 @@ export const Products = () => {
                     <ProductsLeftBox1 />
                     <ProductsLeftBox2 />
                     <ProductsLeftBox3 />
+                    <ProductsLeftBox1 />
+                    <ProductsLeftBox1 />
+                    <ProductsLeftBox1 />
+                    <ProductsLeftBox1 />
+
 
                 </Box>
 
