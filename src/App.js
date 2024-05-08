@@ -7,7 +7,7 @@ import { Footer } from "./components/Footer";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Products } from "./components/products/Products";
 import { Breadcrumbss } from "./components/Breadcrumbss";
-
+import { ProductsInformation } from "./components/products/ProductsInformation";
 //boyutlarla alakali 45. videoya bak!!!
 function App() {
     return (
@@ -19,6 +19,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/products" element={<Products />} />
+                        <Route path="/ProductsInformation" element={<ProductsInformation />} />
                     </Routes>
                     <Footer />
                 </BrowserRouter>

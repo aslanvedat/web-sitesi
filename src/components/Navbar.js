@@ -16,7 +16,6 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Button, Drawer, useMediaQuery } from '@mui/material';
-import { Products } from './products/Products';
 import { Link } from "react-router-dom";
 //22-25 arasındaki videolara bakarak  menu cesitlendirilebilir
 
@@ -88,7 +87,7 @@ export const Navbar = () => {
                     <Button sx={{ color: 'inherit' }}>Ürünler</Button>
                     <Button sx={{ color: 'inherit' }}>Hakkımızda</Button>
                     {/* alttaki link duzgun calismiyor bi daha bakilmali!!!! */}
-
+                    <Button sx={{ color: 'inherit' }}><Link to="/">Home</Link></Button>
                     <Button sx={{ color: 'inherit' }}><Link to="/products">product</Link></Button>
                     <Button sx={{ color: 'inherit' }}>Container</Button>
                     <Button sx={{ color: 'inherit' }}>Container</Button>
@@ -122,8 +121,13 @@ export const Navbar = () => {
                         > */}
                         <MenuItem onClick={handleClose}>Ürünler</MenuItem>
                         <MenuItem onClick={handleClose}>Hakkımızda</MenuItem>
-                        <MenuItem onClick={handleClose}>Container</MenuItem>
-                        <MenuItem onClick={handleClose}>Container</MenuItem>
+                        <MenuItem onClick={handleClose}>
+                            <Button sx={{ color: 'inherit' }}><Link to="/">Home</Link></Button>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose}>
+                            <Button sx={{ color: 'inherit' }}><Link to="/products">product</Link></Button>
+
+                        </MenuItem>
                         <MenuItem onClick={handleClose}>Container</MenuItem>
                         <MenuItem onClick={handleClose}>Blog</MenuItem>
                         {/* </Menu> */}

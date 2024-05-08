@@ -31,9 +31,10 @@ export const Products = () => {
                 </Box>
 
 
-                <Box sx={{ width: "70vw", height: "100vh", bgcolor: "#148" }}>
+                <Box sx={{ width: "70vw", height: "100vh" }}>
                     <ProductsRightBox />
                 </Box>
+
             </Box>
         </Box >
     )

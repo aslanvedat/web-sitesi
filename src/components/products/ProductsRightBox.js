@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Grid, Paper, Card, CardActions, CardContent, CardMedia, Typography, Button, useTheme } from "@mui/material"
+import { Link } from "react-router-dom";
 
 export const ProductsRightBox = () => {
     return (
@@ -23,8 +24,7 @@ export const ProductsRightBox = () => {
                                         </Typography>
                                     </CardContent>
                                     <CardActions sx={{ justifyContent: "center" }}>
-                                        <Button size="large" >ADD</Button>
-
+                                        <Button size="large" ><Link to="/productsInformation">View</Link></Button>
 
                                     </CardActions>
                                 </Card>

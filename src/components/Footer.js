@@ -16,7 +16,7 @@ export const Footer = () => {
     //paperdaki bgcolor calismiyor ona bak !!!!
     return (
         <Box>
-            <Paper sx={{ [theme.breakpoints.up('sm')]: { width: "100vw", height: "50vh", bgcolor: "secondary" }, [theme.breakpoints.down("sm")]: { width: "100vw", height: "140vh" }, bgcolor: "#178" }}>
+            <Paper sx={{ [theme.breakpoints.up('sm')]: { width: "100vw", height: "50vh", bgcolor: "secondary", mt: "25vh" }, [theme.breakpoints.down("sm")]: { width: "100vw", height: "140vh" }, bgcolor: "#178", mt: "25vh" }}>
 
 
                 <Grid container rowSpacing={2} columnSpacing={1} justifyContent="center" >{/*spacingler le satir ve sutun aralarina bosluklar veriyoruz */}
