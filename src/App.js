@@ -8,6 +8,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Products } from "./components/products/Products";
 import { Breadcrumbss } from "./components/Breadcrumbss";
 import { ProductsInformation } from "./components/products/ProductsInformation";
+import { ShoppingCart } from "./components/products/ShoppingCart";
 //boyutlarla alakali 45. videoya bak!!!
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/products" element={<Products />} />
                         <Route path="/ProductsInformation" element={<ProductsInformation />} />
+                        <Route path="/shoppingCart" element={<ShoppingCart />} />
                     </Routes>
                     <Footer />
                 </BrowserRouter>
