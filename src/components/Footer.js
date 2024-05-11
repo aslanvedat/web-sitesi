@@ -20,7 +20,7 @@ export const Footer = () => {
 
 
                 <Grid container rowSpacing={2} columnSpacing={1} justifyContent="center" >{/*spacingler le satir ve sutun aralarina bosluklar veriyoruz */}
-                    <Grid item xs={12} sm={3}>{/*sm sayesinde telefon modunda alt alta siralanir  */}
+                    <Grid item xs={6} sm={3}>{/*sm sayesinde telefon modunda alt alta siralanir  */}
                         <Box p={2} display="flex" flexDirection="column" alignItems="center">
                             <Typography variant="h6">
                                 Contant
@@ -75,7 +75,7 @@ export const Footer = () => {
 
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={3}>
+                    <Grid item xs={6} sm={3}>
                         <Box p={2} display="flex" flexDirection="column" alignItems="center">
                             <Typography variant="h6">
                                 My List
@@ -99,7 +99,7 @@ export const Footer = () => {
                             </List>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={3}>
+                    <Grid item xs={6} sm={3}>
                         <Box p={2} display="flex" flexDirection="column" alignItems="center">
                             <Typography variant="h6">
                                 My List 2
@@ -123,7 +123,7 @@ export const Footer = () => {
                             </List>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={3}>
+                    <Grid item xs={6} sm={3}>
                         <Box p={2} display="flex" flexDirection="column" alignItems="center">
                             <Typography variant="h6">
                                 My List 3
