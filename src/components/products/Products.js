@@ -1,10 +1,11 @@
 import { Title } from '@mui/icons-material'
-import { Box, useMediaQuery } from '@mui/material'
+import { Box, Button, useMediaQuery } from '@mui/material'
 import React from 'react'
 import { ProductsLeftBox1 } from './ProductsLeftBox1'
 import { ProductsLeftBox2 } from './ProductsLeftBox2'
 import { ProductsLeftBox3 } from './ProductsLeftBox3'
 import { ProductsRightBox } from './ProductsRightBox'
+import { ProductsSmallFilter } from './ProductsSmallFilter'
 
 export const Products = () => {
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
@@ -44,12 +45,16 @@ export const Products = () => {
 
     return (
         <Box>
+            <Box>
+                <ProductsSmallFilter />
 
-            <Box sx={{ width: "90vw", height: "100vh" }}>
-                <ProductsRightBox />
-            </Box>
-        </Box>
 
+
+                <Box sx={{ width: "90vw", height: "100vh" }}>
+                    <ProductsRightBox />
+                </Box>
+            </Box >
+        </Box >
 
     )
 }

@@ -86,7 +86,6 @@ export const Navbar = () => {
                 <Typography variant="h6" noWrap component="div">
                     <Button sx={{ color: 'inherit' }}>Ürünler</Button>
                     <Button sx={{ color: 'inherit' }}>Hakkımızda</Button>
-                    {/* alttaki link duzgun calismiyor bi daha bakilmali!!!! */}
                     <Button sx={{ color: 'inherit' }}><Link to="/">Home</Link></Button>
                     <Button sx={{ color: 'inherit' }}><Link to="/products">product</Link></Button>
                     <Button sx={{ color: 'inherit' }}>Container</Button>
@@ -113,12 +112,7 @@ export const Navbar = () => {
                 </Button>
                 <Drawer anchor="left" open={isDrawerOpen} onClick={() => setisDrawerOpen(false)}>
                     <Box p={2} width="250px" textAlign="center" role="presentation">
-                        {/* 
-                        <Menu
-                            anchorEl={anchorEl}
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                        > */}
+
                         <MenuItem onClick={handleClose}>Ürünler</MenuItem>
                         <MenuItem onClick={handleClose}>Hakkımızda</MenuItem>
                         <MenuItem onClick={handleClose}>
@@ -130,7 +124,6 @@ export const Navbar = () => {
                         </MenuItem>
                         <MenuItem onClick={handleClose}>Container</MenuItem>
                         <MenuItem onClick={handleClose}>Blog</MenuItem>
-                        {/* </Menu> */}
 
                     </Box>
 
@@ -297,7 +290,6 @@ export const Navbar = () => {
                         />
                     </Search>
                     <Box sx={{ flexGrow: 1 }} >space</Box>{/*aradaki bosluk bu box ile verilmis */}
-
 
 
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }} /*bu box ne ise yarıyor?? */>
