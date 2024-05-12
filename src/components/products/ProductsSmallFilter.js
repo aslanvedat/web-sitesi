@@ -1,120 +1,129 @@
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography, Button, Menu, MenuItem, Checkbox } from '@mui/material';
+//import { AppBar, Toolbar, IconButton, Typography, Button, Menu, MenuItem, Checkbox, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import { useState } from 'react';
+import { AppBar, Toolbar, Button, Drawer, List, ListItem, ListItemText, Box, Checkbox, Paper } from '@mui/material';
 
 export const ProductsSmallFilter = () => {
-    const [anchorEl1, setAnchorEl1] = React.useState(null);
-    const [anchorEl2, setAnchorEl2] = React.useState(null);
-    const [anchorEl3, setAnchorEl3] = React.useState(null);
-    const [anchorEl4, setAnchorEl4] = React.useState(null);
+    const [drawerOpen, setDrawerOpen] = useState(false);
 
-    const handleMenuClick = (event, anchorEl) => {
-        if (anchorEl === 'anchorEl1') {
-            setAnchorEl1(event.currentTarget);
-        } else if (anchorEl === 'anchorEl2') {
-            setAnchorEl2(event.currentTarget);
-        } else if (anchorEl === 'anchorEl4') {
-            setAnchorEl3(event.currentTarget);
-        } else if (anchorEl === 'anchorEl3') {
-            setAnchorEl4(event.currentTarget);
-        }
+    const handleDrawerOpen = () => {
+        setDrawerOpen(true);
     };
 
-    const handleMenuClose = (anchorEl) => {
-        if (anchorEl === 'anchorEl1') {
-            setAnchorEl1(null);
-        } else if (anchorEl === 'anchorEl2') {
-            setAnchorEl2(null);
-        } else if (anchorEl === 'anchorEl3') {
-            setAnchorEl3(null);
-        } else if (anchorEl === 'anchorEl4') {
-            setAnchorEl4(null);
-        }
+    const handleDrawerClose = () => {
+        setDrawerOpen(false);
     };
 
     return (
-        <AppBar position="static">
-            <Toolbar>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    aria-controls="menu1"
-                    aria-haspopup="true"
-                    onClick={(event) => handleMenuClick(event, 'anchorEl1')}
-                >
-                    Options
-                </Button>
-                <Menu
-                    id="menu1"
-                    anchorEl={anchorEl1}
-                    open={Boolean(anchorEl1)}
-                    onClose={() => handleMenuClose('anchorEl1')}
-                >
-                    <MenuItem> <Checkbox /> Option 1</MenuItem>
-                    <MenuItem><Checkbox />Option 2</MenuItem>
-                    <MenuItem><Checkbox />Option 3</MenuItem>
-                </Menu>
+        <Box display={'flex'} justifyContent={"center"}>
+            <Box>
+                <AppBar position="static" style={{ backgroundColor: 'white' }}>
+                    <Toolbar sx={{ px: "1vw" }}>{/*default padding kaynagi toolbar */}
+                        <Button
+                            variant="contained"
+                            style={{ backgroundColor: '#178' }}
+                            onClick={handleDrawerOpen}
 
-                <Button
-                    variant="contained"
-                    color="primary"
-                    aria-controls="menu2"
-                    aria-haspopup="true"
-                    onClick={(event) => handleMenuClick(event, 'anchorEl2')}
-                >
-                    Options
-                </Button>
-                <Menu
-                    id="menu2"
-                    anchorEl={anchorEl2}
-                    open={Boolean(anchorEl2)}
-                    onClose={() => handleMenuClose('anchorEl2')}
-                >
-                    <MenuItem onClick={() => handleMenuClose('anchorEl2')}>Option 1</MenuItem>
-                    <MenuItem onClick={() => handleMenuClose('anchorEl2')}>Option 2</MenuItem>
-                    <MenuItem onClick={() => handleMenuClose('anchorEl2')}>Option 3</MenuItem>
-                </Menu>
+                        >
+                            Options
+                        </Button>
+                    </Toolbar>
+                </AppBar>
+                <Drawer
+                    anchor="top"
+                    open={drawerOpen}
+                    onClose={handleDrawerClose}
 
-                <Button
-                    variant="contained"
-                    color="primary"
-                    aria-controls="menu3"
-                    aria-haspopup="true"
-                    onClick={(event) => handleMenuClick(event, 'anchorEl3')}
                 >
-                    Options
-                </Button>
-                <Menu
-                    id="menu3"
-                    anchorEl={anchorEl3}
-                    open={Boolean(anchorEl3)}
-                    onClose={() => handleMenuClose('anchorEl3')}
+
+                    <List >
+                        <ListItem>
+                            <Checkbox />
+                            <ListItemText primary="Option 4" />
+                        </ListItem>
+                        <ListItem>
+                            <Checkbox />
+                            <ListItemText primary="Option 5" />
+                        </ListItem>
+                        <ListItem>
+                            <Checkbox />
+                            <ListItemText primary="Option 6" />
+                        </ListItem>
+                    </List>
+
+                </Drawer>
+            </Box>
+            <Box>
+                <AppBar position="static" style={{ backgroundColor: 'white' }}>
+                    <Toolbar sx={{ px: "1vw" }}>
+                        <Button
+                            variant="contained"
+                            style={{ backgroundColor: '#178' }}
+                            onClick={handleDrawerOpen}
+                        >
+                            Options2
+                        </Button>
+                    </Toolbar>
+                </AppBar>
+                <Drawer
+                    anchor="top"
+                    open={drawerOpen}
+                    onClose={handleDrawerClose}
                 >
-                    <MenuItem onClick={() => handleMenuClose('anchorEl3')}>Option 1</MenuItem>
-                    <MenuItem onClick={() => handleMenuClose('anchorEl3')}>Option 2</MenuItem>
-                    <MenuItem onClick={() => handleMenuClose('anchorEl3')}>Option 3</MenuItem>
-                </Menu>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    aria-controls="menu4"
-                    aria-haspopup="true"
-                    onClick={(event) => handleMenuClick(event, 'anchorEl4')}
+                    <List>
+                        <ListItem>
+                            <Checkbox />
+                            <ListItemText primary="Option 1" />
+                        </ListItem>
+                        <ListItem>
+                            <Checkbox />
+                            <ListItemText primary="Option 2" />
+                        </ListItem>
+                        <ListItem>
+                            <Checkbox />
+                            <ListItemText primary="Option 3" />
+                        </ListItem>
+                    </List>
+                </Drawer>
+
+            </Box>
+            <Box>
+                <AppBar position="static" style={{ backgroundColor: 'white' }}>
+                    <Toolbar sx={{ px: "1vw" }}>
+                        <Button
+                            variant="contained"
+                            style={{ backgroundColor: '#178' }}
+                            onClick={handleDrawerOpen}
+                        >
+                            Options3
+                        </Button>
+                    </Toolbar>
+                </AppBar>
+                <Drawer
+                    anchor="top"
+                    open={drawerOpen}
+                    onClose={handleDrawerClose}
                 >
-                    Options
-                </Button>
-                <Menu
-                    id="menu4"
-                    anchorEl={anchorEl4}
-                    open={Boolean(anchorEl4)}
-                    onClose={() => handleMenuClose('anchorEl4')}
-                >
-                    <MenuItem onClick={() => handleMenuClose('anchorEl4')}>Option 1</MenuItem>
-                    <MenuItem onClick={() => handleMenuClose('anchorEl4')}>Option 2</MenuItem>
-                    <MenuItem onClick={() => handleMenuClose('anchorEl4')}>Option 3</MenuItem>
-                </Menu>
-            </Toolbar>
-        </AppBar>
+                    <List>
+                        <ListItem>
+                            <Checkbox />
+                            <ListItemText primary="Option 1" />
+                        </ListItem>
+                        <ListItem>
+                            <Checkbox />
+                            <ListItemText primary="Option 2" />
+                        </ListItem>
+                        <ListItem>
+                            <Checkbox />
+                            <ListItemText primary="Option 3" />
+                        </ListItem>
+                    </List>
+                </Drawer>
+
+            </Box>
+
+        </Box>
     );
+
 }
