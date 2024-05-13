@@ -9,6 +9,7 @@ import { Products } from "./components/products/Products";
 import { Breadcrumbss } from "./components/Breadcrumbss";
 import { ProductsInformation } from "./components/products/ProductsInformation";
 import { ShoppingCart } from "./components/products/ShoppingCart";
+import { Payment } from "./components/products/Payment";
 //boyutlarla alakali 45. videoya bak!!!
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                         <Route path="/products" element={<Products />} />
                         <Route path="/ProductsInformation" element={<ProductsInformation />} />
                         <Route path="/shoppingCart" element={<ShoppingCart />} />
+                        <Route path="/payment" element={<Payment />} />
 
                     </Routes>
                     <Footer />
