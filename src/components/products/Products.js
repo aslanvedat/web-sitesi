@@ -16,7 +16,7 @@ export const Products = () => {
             <Box >
                 <Box sx={{ width: "96vw", height: "102vh", display: "flex", justifyContent: "space-between", mx: "2vw" }} >
 
-                    <Box sx={{ width: "15vw", height: "100vh", bgcolor: "#157", overflowY: "scroll" }}>
+                    <Box sx={{ width: "15vw", height: "100vh", bgcolor: "#157", overflowY: "scroll", borderRadius: "1vh" }}>
 
                         {/* <Stack sx={{ height: "20vh", alignItems: "center", p: "1vh", columns: "1", rowHeight: "2vh" }}  >
 

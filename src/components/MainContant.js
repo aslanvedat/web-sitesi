@@ -12,8 +12,8 @@ export const MainContant = () => {
                 <Grid container my={4} rowSpacing={2} columnSpacing={3} justifyContent="center">{/*spacingler le satir ve sutun aralarina bosluklar veriyoruz */}
                     {itemData.map(item => (
                         <Grid item xs={12} sm={3}>{/*sm sayesinde telefon modunda alt alta siralanir  */}
-                            <Box bgcolor={"#178"} >
-                                <Card >
+                            <Box >
+                                <Card sx={{ borderRadius: "1vh" }} >
                                     <CardMedia sx={{ maxHeight: "25vh" }} component={"img"} image={item.img} alt="unsplash image" />
                                     <CardContent sx={{ maxHeight: "15vh", overflowY: "scroll" }}>
                                         <Typography gutterBottom variant="h5" component={"div"} >{item.title}</Typography>

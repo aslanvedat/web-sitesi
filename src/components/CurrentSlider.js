@@ -39,7 +39,7 @@ export const CurrentSlider = () => {
 
 
             <Slide key={currentSlide} direction="right" in={true} timeout={1500}>
-                <img src={slides[currentSlide].img} alt={slides[currentSlide].title} style={{ width: '80%', maxHeight: "70vh" }} />
+                <img src={slides[currentSlide].img} alt={slides[currentSlide].title} style={{ width: '80%', maxHeight: "70vh", borderRadius: "1vh" }} />
             </Slide>
             <Box >
                 <Button onClick={goToPrevSlide} disabled={currentSlide === 0}>

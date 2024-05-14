@@ -49,11 +49,11 @@ export const ProductsInformation = () => {
         return (
             <Box>
                 <Box sx={{ width: "80vw", height: "90vh", justifyContent: "center", mx: "5vw", display: "flex", justifyContent: "space-between", px: "5vw" }}>
-                    <Box sx={{ width: "35vw", height: "90vh", bgcolor: "red" }}>
+                    <Box sx={{ width: "35vw", height: "90vh" }}>
                         {itemData.map(item => (
-                            <Box bgcolor={"#178"} >
+                            <Box  >
 
-                                <Card sx={{ p: "0", maxHeight: "90vh" }} >
+                                <Card sx={{ p: "0", maxHeight: "90vh", borderRadius: "1vh" }} >
                                     <CardMedia sx={{ maxHeight: "70vh" }} component={"img"} image={selectedImage || item.img} alt="unsplash image" />
                                     <CardActions sx={{ justifyContent: "center", height: "20vh" }}>
                                         <Box display={'flex'}>
@@ -116,11 +116,11 @@ export const ProductsInformation = () => {
     return (
         <Box>
             <Box sx={{ width: "90vw", height: "70vh", justifyContent: "center", mx: "5vw", display: "flex", justifyContent: "space-between", px: "5vw" }}>
-                <Box sx={{ width: "85vw", height: "70vh", bgcolor: "red" }}>
+                <Box sx={{ width: "85vw", height: "70vh" }}>
                     {itemData.map(item => (
-                        <Box bgcolor={"#178"} >
+                        <Box  >
 
-                            <Card sx={{ p: "0", maxHeight: "70vh" }} >
+                            <Card sx={{ p: "0", maxHeight: "70vh", borderRadius: "1vh" }} >
                                 <CardMedia sx={{ maxHeight: "70vh" }} component={"img"} image={selectedImage || item.img} alt="unsplash image" />
                                 <CardActions sx={{ justifyContent: "center", height: "18vh" }}>
                                     <Box display={'flex'}>

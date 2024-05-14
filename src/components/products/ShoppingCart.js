@@ -1,13 +1,13 @@
 
-import { Box, TableRow, Table, TableHead, TableCell, TableContainer, Paper, TableBody, Typography, Checkbox, Button, Card, CardContent, CardActions } from '@mui/material'
+import { Box, TableRow, Table, TableHead, TableCell, TableContainer, Paper, TableBody, Typography, Checkbox, Button, Card, CardContent, CardActions, List, ListItem, ListItemText } from '@mui/material'
 import React from 'react'
 import { Link } from "react-router-dom";
 
 export const ShoppingCart = () => {
     return (
         <Box display={'flex'}>
-            <Box>
-                <Box>
+            <Box sx={{ mx: "2vw" }}>
+                <Box >
                     <Typography>
                         odeme turu
                         {/* buraya daha sonra slader panel benzeri bir ozellik eklenecek  */}
@@ -72,7 +72,8 @@ export const ShoppingCart = () => {
                     </TableContainer>
                 </Box>
             </Box>
-            <Box sx={{ width: "30vw", height: "70vh" }} style={{ backgroundColor: "grey" }}>
+
+            <Box sx={{ width: "30vw", height: "70vh", borderRadius: "2vh" }} style={{ backgroundColor: "grey" }}>
 
 
                 <Typography><Button style={{ color: "white" }} > <Checkbox sx={{ color: "#178" }} />Ön Bilgilendirme Koşulları'nı ve Mesafeli Satış Sözleşmesi'ni okudum, onaylıyorum. </Button></Typography>
@@ -81,6 +82,40 @@ export const ShoppingCart = () => {
                     {/* siparis ozeti kismi daha sonra yapilacak */}
                     <Typography variant='h5'>
                         Sipariş Özeti
+
+                        <List sx={{ justifyContent: "center" }}>
+
+                            <ListItem sx={{ margin: "2vh" }}>
+
+                                <ListItemText sx={{ display: 'flex', justifyContent: "center" }} >
+                                    Ürün toplam:200tl
+                                </ListItemText>
+
+                            </ListItem >
+                            <ListItem sx={{ margin: "2vh" }} >
+
+                                <ListItemText sx={{ display: 'flex', justifyContent: "center" }} >
+                                    kargo toplam:50tl
+                                </ListItemText>
+
+                            </ListItem>
+                            <ListItem sx={{ margin: "2vh" }} >
+
+                                <ListItemText sx={{ display: 'flex', justifyContent: "center" }} >
+                                    toplam kazanc:50tl
+                                </ListItemText>
+
+                            </ListItem>
+                            <ListItem sx={{ margin: "2vh" }} >
+
+                                <ListItemText sx={{ display: 'flex', justifyContent: "center" }} >
+                                    toplam:200tl
+                                </ListItemText>
+
+                            </ListItem>
+
+                        </List>
+
                     </Typography>
 
 

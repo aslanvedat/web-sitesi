@@ -289,7 +289,6 @@ export const Navbar = () => {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
-                    <Box sx={{ flexGrow: 1 }} >space</Box>{/*aradaki bosluk bu box ile verilmis */}
 
 
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }} /*bu box ne ise yarıyor?? */>

@@ -15,9 +15,9 @@ export const ProductsRightBox = () => {
                     {itemData.map(item => (
 
                         <Grid item xs={6} sm={3} >{/*sm sayesinde telefon modunda alt alta siralanir  */}
-                            <Box bgcolor={"#178"} >
+                            <Box  >
 
-                                <Card sx={{ p: "0", maxHeight: "65vh" }} >
+                                <Card sx={{ p: "0", maxHeight: "65vh", borderRadius: "1vh" }} >
                                     <CardMedia sx={{ maxHeight: "35vh" }} component={"img"} image={item.img} alt="unsplash image" />
                                     <CardContent sx={{ maxHeight: "16vh", overflowY: "scroll", p: "0" }}>
                                         <Typography variant="body1" component={"div"} >{item.title}</Typography>
