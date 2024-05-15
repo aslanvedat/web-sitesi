@@ -8,16 +8,15 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useState } from 'react';
 
-export const ProductsInformation = () => {
+export const ProductsInformation = ({ updateSelectedShopping }) => {
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
     const [selectedColor, setSelectedColor] = useState(null);
     const [selectedImage, setSelectedImage] = useState("");
     const [selectedShopping, setSelectedShopping] = useState(0);
     const [showAlert, setShowAlert] = useState(null);
+    const [orderCount, setOrderCount] = useState(1);
     const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
-
-
     const handleCheckboxClick = (color) => {
         setSelectedColor(color);
     };
@@ -28,18 +27,25 @@ export const ProductsInformation = () => {
     const handleShoppingAddClick = (add) => {
         add = selectedShopping + 1;
         setSelectedShopping(add);
+
     }
     const handleShoppingRemoveClick = (remove) => {
         if (selectedShopping == 0) {
+
             return setSelectedColor(0);
+
         }
         remove = selectedShopping - 1;
-        setSelectedShopping(remove);
+        updateSelectedShopping(remove);
     }
     const handleShoppingClick = () => {
+
         if (selectedShopping == 0) {
             return setShowAlert(false);
         }
+        updateSelectedShopping(orderCount);
+        setOrderCount(orderCount + 1);
+
         setShowAlert(true);
         setTimeout(() => {
             setShowAlert(false);

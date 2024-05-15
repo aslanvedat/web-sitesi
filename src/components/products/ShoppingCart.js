@@ -1,18 +1,23 @@
 
+import { useTheme } from '@emotion/react';
 import { Box, TableRow, Table, TableHead, TableCell, TableContainer, Paper, TableBody, Typography, Checkbox, Button, Card, CardContent, CardActions, List, ListItem, ListItemText } from '@mui/material'
 import React from 'react'
 import { Link } from "react-router-dom";
 
 export const ShoppingCart = () => {
+    const theme = useTheme();
     return (
-        <Box display={'flex'}>
+        <Box sx={{ [theme.breakpoints.up("sm")]: { display: "flex" } }} >
             <Box sx={{ mx: "2vw" }}>
                 <Box >
                     <Typography>
                         odeme turu
                         {/* buraya daha sonra slader panel benzeri bir ozellik eklenecek  */}
                     </Typography>
-                    <TableContainer component={Paper} sx={{ maxHeight: "60vh", width: "60vw", overflowY: "scroll" }} >
+                    <TableContainer component={Paper} sx={{
+                        [theme.breakpoints.up("sm")]: { maxHeight: "60vh", width: "60vw" },
+                        [theme.breakpoints.down("sm")]: { maxHeight: "60vh", width: "90vw" }, overflowY: "scroll"
+                    }} >
                         <Table aria-label='simpleelement' stickyHeader>
                             <TableHead  >
                                 <TableRow sx={{ backgroundColor: "primary" }} /*burdaki background  sx,style calismiyor unutma !! */ >
@@ -45,7 +50,10 @@ export const ShoppingCart = () => {
                     </TableContainer>
                 </Box>
                 <Box>
-                    <TableContainer component={Paper} sx={{ maxHeight: "50vh", width: "60vw", overflowY: "scroll", my: "2vh" }}>
+                    <TableContainer component={Paper} sx={{
+                        [theme.breakpoints.up("sm")]: { maxHeight: "50vh", width: "60vw" },
+                        [theme.breakpoints.down("sm")]: { maxHeight: "50vh", width: "90vw" }, overflowY: "scroll", my: "2vh"
+                    }}>
                         <Table aria-label='simpleelement' stickyHeader>
                             <TableHead >
                                 <TableRow style={{ backgroundColor: "grey" }}/*bu style calismiyor unutma !! */ >
@@ -73,12 +81,12 @@ export const ShoppingCart = () => {
                 </Box>
             </Box>
 
-            <Box sx={{ width: "30vw", height: "70vh", borderRadius: "2vh" }} style={{ backgroundColor: "grey" }}>
+            <Box sx={{ [theme.breakpoints.up("sm")]: { width: "30vw", height: "70vh" }, [theme.breakpoints.down("sm")]: { width: "90vw", height: "60vh" }, borderRadius: "2vh" }} style={{ backgroundColor: "grey" }}>
 
 
                 <Typography><Button style={{ color: "white" }} > <Checkbox sx={{ color: "#178" }} />Ön Bilgilendirme Koşulları'nı ve Mesafeli Satış Sözleşmesi'ni okudum, onaylıyorum. </Button></Typography>
 
-                <Card sx={{ p: "0", height: "50vh", width: "30vw" }} >
+                <Card sx={{ [theme.breakpoints.up("sm")]: { height: "45vh", width: "30vw" }, [theme.breakpoints.down("sm")]: { height: "40vh", width: "90vw" }, p: "0" }} >
                     {/* siparis ozeti kismi daha sonra yapilacak */}
                     <Typography variant='h5'>
                         Sipariş Özeti
@@ -120,7 +128,7 @@ export const ShoppingCart = () => {
 
 
                 </Card>
-                <Button size="large" sx={{ backgroundColor: "#178" }} ><Link to="/payment" style={{ color: "white" }}>Make Payment</Link></Button>
+                <Button size="large" sx={{ backgroundColor: "#178", my: "2vh" }} ><Link to="/payment" style={{ color: "white" }}>Make Payment</Link></Button>
             </Box>
         </Box>
     )

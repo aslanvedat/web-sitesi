@@ -1,15 +1,22 @@
 import { createTheme } from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
+import { green, lightBlue, purple, teal } from '@mui/material/colors';
 
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#b39ddb',
+            // main: lightBlue[500]
+            main: "#5c6bc0"
+            // main: "#424242"
+        }, secondary: {
+            main: green[400]
         },
-        secondary: {
-            main: '#f44336',
+        color3: {
+            main: "#a7ffeb"
         },
-    },
+        grey: {
+            main: "#212121"
+        }
+    }
 });
 
 export default theme;

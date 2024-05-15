@@ -16,7 +16,9 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Button, Drawer, useMediaQuery } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from "react-router-dom";
+import theme from '../Theme';
 //22-25 arasındaki videolara bakarak  menu cesitlendirilebilir
 
 
@@ -60,7 +62,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export const Navbar = () => {
+export const Navbar = ({ selectedShopping }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -116,7 +118,7 @@ export const Navbar = () => {
                         <MenuItem onClick={handleClose}>Ürünler</MenuItem>
                         <MenuItem onClick={handleClose}>Hakkımızda</MenuItem>
                         <MenuItem onClick={handleClose}>
-                            <Button sx={{ color: 'inherit' }}><Link to="/">Home</Link></Button>
+                            <Button sx={{ color: "white" }} ><Link to="/">Home</Link></Button>
                         </MenuItem>
                         <MenuItem onClick={handleClose}>
                             <Button sx={{ color: 'inherit' }}><Link to="/products">product</Link></Button>
@@ -193,12 +195,20 @@ export const Navbar = () => {
             onClose={handleMobileMenuClose}
         >
             <MenuItem>
+                <IconButton size="large" aria-label="show 2 new mails" color="inherit">
+                    <Badge badgeContent={selectedShopping} color="error">
+                        <Link to="/shoppingCart">    <ShoppingCartIcon style={{ color: "black" }} /></Link>
+                    </Badge>
+                </IconButton>
+
+            </MenuItem>
+            <MenuItem>
                 <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                     <Badge badgeContent={4} color="error">
                         <MailIcon />
                     </Badge>
                 </IconButton>
-                <p>Message</p>
+
             </MenuItem>
             <MenuItem>
                 <IconButton
@@ -210,7 +220,7 @@ export const Navbar = () => {
                         <NotificationsIcon />
                     </Badge>
                 </IconButton>
-                <p>Notifications</p>
+
             </MenuItem>
             <MenuItem onClick={handleProfileMenuOpen}>
                 <IconButton
@@ -233,17 +243,23 @@ export const Navbar = () => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={{ height: 125, bgcolor: "#178" }}  >
+            <AppBar position="static" sx={{ height: 125 }}  >
                 {/*yumusak renkler icin https://mui.com/material-ui/customization/color/#picking-colors 'e bak */}
                 <Toolbar sx={{ justifyContent: 'space-between' }} > <ResponsiveToolbar />
 
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        <IconButton size="large" aria-label="show 2 new mails" color="inherit">
+                            <Badge badgeContent={selectedShopping} color="error">
+                                <Link to="/shoppingCart">    <ShoppingCartIcon style={{ color: "white" }} /></Link>
+                            </Badge>
+                        </IconButton>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="error">
                                 {/* <Box sx={{ fontSize: "18px" }}>mail</Box> */}
                                 <MailIcon />
                             </Badge>
                         </IconButton>
+
                         <IconButton
                             size="large"
                             aria-label="show 17 new notifications"
@@ -251,7 +267,6 @@ export const Navbar = () => {
                         >
                             <Badge badgeContent={17} color="error">
                                 {/* <Box sx={{ fontSize: "18px" }}>notification</Box> */}
-
                                 <NotificationsIcon />
                             </Badge>
                         </IconButton>
@@ -264,7 +279,7 @@ export const Navbar = () => {
                             onClick={handleProfileMenuOpen}
                             color="inherit"
                         >
-                            <Box sx={{ fontSize: "18px" }}>user</Box>
+                            <Box sx={{ fontSize: "18px" }}>Profile</Box>
                             <AccountCircle />
                         </IconButton>
                     </Box>

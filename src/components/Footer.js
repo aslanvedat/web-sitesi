@@ -9,14 +9,14 @@ import * as React from 'react';
 
 
 
-
 export const Footer = () => {
 
     const theme = useTheme();
+
     //paperdaki bgcolor calismiyor ona bak !!!!
     return (
         <Box>
-            <Paper sx={{ [theme.breakpoints.up('sm')]: { width: "100vw", height: "50vh", bgcolor: "secondary", mt: "25vh" }, [theme.breakpoints.down("sm")]: { width: "100vw", height: "80vh" }, bgcolor: "#178", mt: "25vh" }}>
+            <Paper sx={{ [theme.breakpoints.up('sm')]: { width: "100vw", height: "50vh" }, [theme.breakpoints.down("sm")]: { width: "100vw", height: "80vh" }, backgroundColor: theme.palette.primary.main, mt: "25vh", color: "white" }}>
 
 
                 <Grid container rowSpacing={2} columnSpacing={1} justifyContent="center" >{/*spacingler le satir ve sutun aralarina bosluklar veriyoruz */}
@@ -30,15 +30,15 @@ export const Footer = () => {
 
                                     <ListItem disablePadding>
                                         <ListItemButton>
-                                            <ListItemIcon>
-                                                <TwitterIcon />
+                                            <ListItemIcon >
+                                                <TwitterIcon sx={{ color: "#1DA1F2" }} />
                                             </ListItemIcon>
                                             <ListItemText primary="Twitter" />
                                         </ListItemButton>
                                     </ListItem>
                                     <ListItem disablePadding>
                                         <ListItemButton>
-                                            <ListItemIcon>
+                                            <ListItemIcon sx={{ color: "white" }}>
                                                 <DraftsIcon />
                                             </ListItemIcon>
                                             <ListItemText primary="Drafts" />
@@ -47,7 +47,7 @@ export const Footer = () => {
                                     <ListItem disablePadding>
                                         <ListItemButton>
                                             <ListItemIcon>
-                                                <InstagramIcon />
+                                                <InstagramIcon sx={{ color: "#fccc63" }} />
                                             </ListItemIcon>
                                             <ListItemText primary="Instagram" />
                                         </ListItemButton>
@@ -55,7 +55,7 @@ export const Footer = () => {
                                     <ListItem disablePadding>
                                         <ListItemButton>
                                             <ListItemIcon>
-                                                <LinkedInIcon />
+                                                <LinkedInIcon sx={{ color: "#1877F2" }} />
                                             </ListItemIcon>
                                             <ListItemText primary="Linkedin" />
                                         </ListItemButton>
@@ -63,7 +63,7 @@ export const Footer = () => {
                                     <ListItem disablePadding>
                                         <ListItemButton>
                                             <ListItemIcon>
-                                                <FacebookIcon />
+                                                <FacebookIcon sx={{ color: "#1877F2" }} />
                                             </ListItemIcon>
                                             <ListItemText primary="Facebook" />
                                         </ListItemButton>
