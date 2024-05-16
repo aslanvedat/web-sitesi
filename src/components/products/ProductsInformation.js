@@ -7,6 +7,8 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useState } from 'react';
+import LeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import RightIcon from '@mui/icons-material/ChevronRight';
 
 export const ProductsInformation = ({ updateSelectedShopping }) => {
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -51,6 +53,8 @@ export const ProductsInformation = ({ updateSelectedShopping }) => {
             setShowAlert(false);
         }, 4000)
     }
+
+
     if (!isSmallScreen) {
         return (
             <Box>
@@ -69,6 +73,7 @@ export const ProductsInformation = ({ updateSelectedShopping }) => {
                                                     <CardMedia sx={{ maxHeight: "8vh", }} component={"img"} image={image} alt="unsplash img" />
                                                 </Button>
                                             ))}
+
                                         </Box>
                                     </CardActions>
                                 </Card>

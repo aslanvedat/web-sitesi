@@ -1,7 +1,7 @@
 //alttaki prudactBarData  ile entegrasyon yapilarak   linklerin tek tek  girilmesi onlenmeli!!
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import React, { useState } from "react";
-import { Box, Tab, Button, Card, CardActions, CardContent, CardMedia, Typography, Grid, Drawer, useMediaQuery, useTheme } from "@mui/material"
+import { Box, Tab, Button, Card, CardActions, CardContent, CardMedia, Typography, Grid, Drawer, useMediaQuery, useTheme, ScrollableTabsButtonAuto } from "@mui/material"
 import { Link } from "react-router-dom";
 
 export const ProductBar = () => {
@@ -56,7 +56,7 @@ export const ProductBar = () => {
                 </TabContext>
             </Grid>
 
-        </Box>
+        </Box >
     )
 }
 

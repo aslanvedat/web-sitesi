@@ -11,6 +11,8 @@ import { ProductsInformation } from "./components/products/ProductsInformation";
 import { ShoppingCart } from "./components/products/ShoppingCart";
 import { Payment } from "./components/products/Payment";
 import { useState } from "react";
+import { SignUp } from "./components/SignUp";
+import { SignIn } from "./components/SignIn";
 //boyutlarla alakali 45. videoya bak!!!
 function App() {
 
@@ -31,11 +33,14 @@ function App() {
                         <Route path="/ProductsInformation" element={<ProductsInformation updateSelectedShopping={updateSelectedShopping} />} />
                         <Route path="/shoppingCart" element={<ShoppingCart />} />
                         <Route path="/payment" element={<Payment />} />
-
+                        <Route path="/signUp" element={<SignUp />} />
+                        <Route path="/signIn" element={<SignIn />} />
                     </Routes>
                     <Footer />
                 </BrowserRouter>
-
+                {/* yukardaki signIn ve signUp daha sonra duzenlenerek asagi alinacak  */}
+                {/* <SignUp/> */}
+                {/* <SignIn/> */}
             </div>
         </ThemeProvider>
     );
