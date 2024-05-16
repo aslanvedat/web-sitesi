@@ -1,21 +1,33 @@
 
 import { useTheme } from '@emotion/react';
-import { Box, TableRow, Table, TableHead, TableCell, TableContainer, Paper, TableBody, Typography, Checkbox, Button, Card, CardContent, CardActions, List, ListItem, ListItemText } from '@mui/material'
-import React from 'react'
+import { Box, TableRow, Table, TableHead, TableCell, TableContainer, Paper, TableBody, Typography, Checkbox, Button, Card, List, ListItem, ListItemText, FormControlLabel } from '@mui/material'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 
 export const ShoppingCart = () => {
     const theme = useTheme();
+    const [creditCart, setCreditCart] = useState(false);
+    const [bankCart, setBankCart] = useState(false);
+
+    const hendleClickCreditCard = (event) => {
+        setCreditCart(event.target.checked)
+        setBankCart(false)
+    }
+    const hendleClickBankCard = (event) => {
+        setBankCart(event.target.checked)
+        setCreditCart(false)
+    }
+
     return (
         <Box sx={{ [theme.breakpoints.up("sm")]: { display: "flex" } }} >
-            <Box sx={{ mx: "2vw" }}>
+            <Box sx={{ mx: "3vw" }}>
                 <Box >
-                    <Typography>
-                        odeme turu
-                        {/* buraya daha sonra slader panel benzeri bir ozellik eklenecek  */}
-                    </Typography>
+                    <Box>
+                        <FormControlLabel label="Hesap Kartı İle Öde" control={<Checkbox size="medium" checked={bankCart} onChange={hendleClickBankCard} />} />
+                        <FormControlLabel label="Kredi Kartı İle Öde" control={<Checkbox size="medium" checked={creditCart} onChange={hendleClickCreditCard} />} />
+                    </Box>
                     <TableContainer component={Paper} sx={{
-                        [theme.breakpoints.up("sm")]: { maxHeight: "60vh", width: "60vw" },
+                        [theme.breakpoints.up("sm")]: { maxHeight: "70vh", width: "60vw" },
                         [theme.breakpoints.down("sm")]: { maxHeight: "60vh", width: "90vw" }, overflowY: "scroll"
                     }} >
                         <Table aria-label='simpleelement' stickyHeader>
@@ -49,44 +61,47 @@ export const ShoppingCart = () => {
                         </Table>
                     </TableContainer>
                 </Box>
-                <Box>
-                    <TableContainer component={Paper} sx={{
-                        [theme.breakpoints.up("sm")]: { maxHeight: "50vh", width: "60vw" },
-                        [theme.breakpoints.down("sm")]: { maxHeight: "50vh", width: "90vw" }, overflowY: "scroll", my: "2vh"
-                    }}>
-                        <Table aria-label='simpleelement' stickyHeader>
-                            <TableHead >
-                                <TableRow style={{ backgroundColor: "grey" }}/*bu style calismiyor unutma !! */ >
-                                    <TableCell>installment</TableCell>
-                                    <TableCell>payment</TableCell>
-                                    <TableCell >remaining</TableCell>
 
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {
-                                    tableData2.map(row => (
-                                        <TableRow key={row.id} sx={{ "&:last-child td,&:last-child th": { border: 0 } }}>
-                                            <TableCell>{row.taksit}</TableCell>
-                                            <TableCell>{row.odeme}</TableCell>
-                                            <TableCell>{row.kalan}</TableCell>
+                {creditCart && (
+                    <Box>
+                        <TableContainer component={Paper} sx={{
+                            [theme.breakpoints.up("sm")]: { maxHeight: "50vh", width: "60vw" },
+                            [theme.breakpoints.down("sm")]: { maxHeight: "50vh", width: "90vw" }, overflowY: "scroll", my: "2vh"
+                        }}>
+                            <Table aria-label='simpleelement' stickyHeader>
+                                <TableHead >
+                                    <TableRow style={{ backgroundColor: "grey" }}/*bu style calismiyor unutma !! */ >
+                                        <TableCell>installment</TableCell>
+                                        <TableCell>payment</TableCell>
+                                        <TableCell >remaining</TableCell>
+
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {
+                                        tableData2.map(row => (
+                                            <TableRow key={row.id} sx={{ "&:last-child td,&:last-child th": { border: 0 } }}>
+                                                <TableCell>{row.taksit}</TableCell>
+                                                <TableCell>{row.odeme}</TableCell>
+                                                <TableCell>{row.kalan}</TableCell>
 
 
-                                        </TableRow>
-                                    ))
-                                }
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-                </Box>
+                                            </TableRow>
+                                        ))
+                                    }
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    </Box>
+                )}
             </Box>
 
-            <Box sx={{ [theme.breakpoints.up("sm")]: { width: "30vw", height: "70vh" }, [theme.breakpoints.down("sm")]: { width: "90vw", height: "60vh" }, borderRadius: "2vh" }} style={{ backgroundColor: "grey" }}>
+            <Box sx={{ [theme.breakpoints.up("sm")]: { width: "25vw", height: "70vh", mt: "5vh" }, [theme.breakpoints.down("sm")]: { width: "90vw", height: "60vh" }, borderRadius: "2vh" }} style={{ backgroundColor: "grey" }}>
 
 
                 <Typography><Button style={{ color: "white" }} > <Checkbox sx={{ color: "#178" }} />Ön Bilgilendirme Koşulları'nı ve Mesafeli Satış Sözleşmesi'ni okudum, onaylıyorum. </Button></Typography>
 
-                <Card sx={{ [theme.breakpoints.up("sm")]: { height: "45vh", width: "30vw" }, [theme.breakpoints.down("sm")]: { height: "40vh", width: "90vw" }, p: "0" }} >
+                <Card sx={{ [theme.breakpoints.up("sm")]: { height: "45vh", width: "25vw" }, [theme.breakpoints.down("sm")]: { height: "40vh", width: "90vw" }, p: "0" }} >
                     {/* siparis ozeti kismi daha sonra yapilacak */}
                     <Typography variant='h5'>
                         Sipariş Özeti

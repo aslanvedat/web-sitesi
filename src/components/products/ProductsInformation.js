@@ -32,11 +32,11 @@ export const ProductsInformation = ({ updateSelectedShopping }) => {
     const handleShoppingRemoveClick = (remove) => {
         if (selectedShopping == 0) {
 
-            return setSelectedColor(0);
+            return setSelectedShopping(0);
 
         }
         remove = selectedShopping - 1;
-        updateSelectedShopping(remove);
+        setSelectedShopping(remove);
     }
     const handleShoppingClick = () => {
 
@@ -59,8 +59,8 @@ export const ProductsInformation = ({ updateSelectedShopping }) => {
                         {itemData.map(item => (
                             <Box  >
 
-                                <Card sx={{ p: "0", maxHeight: "90vh", borderRadius: "1vh" }} >
-                                    <CardMedia sx={{ maxHeight: "70vh" }} component={"img"} image={selectedImage || item.img} alt="unsplash image" />
+                                <Card sx={{ p: "0", height: "90vh", borderRadius: "1vh" }} >
+                                    <CardMedia sx={{ height: "70vh" }} component={"img"} image={selectedImage || item.img} alt="unsplash image" />
                                     <CardActions sx={{ justifyContent: "center", height: "20vh" }}>
                                         <Box display={'flex'}>
                                             {item.images.map((image, index) => (
@@ -126,8 +126,8 @@ export const ProductsInformation = ({ updateSelectedShopping }) => {
                     {itemData.map(item => (
                         <Box  >
 
-                            <Card sx={{ p: "0", maxHeight: "70vh", borderRadius: "1vh" }} >
-                                <CardMedia sx={{ maxHeight: "70vh" }} component={"img"} image={selectedImage || item.img} alt="unsplash image" />
+                            <Card sx={{ p: "0", height: "70vh", borderRadius: "1vh" }} >
+                                <CardMedia sx={{ height: "50vh" }} component={"img"} image={selectedImage || item.img} alt="unsplash image" />
                                 <CardActions sx={{ justifyContent: "center", height: "18vh" }}>
                                     <Box display={'flex'}>
                                         {item.images.map((image, index) => (

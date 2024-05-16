@@ -2,7 +2,7 @@
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import React, { useState } from "react";
 import { Box, Tab, Button, Card, CardActions, CardContent, CardMedia, Typography, Grid, Drawer, useMediaQuery, useTheme } from "@mui/material"
-
+import { Link } from "react-router-dom";
 
 export const ProductBar = () => {
 
@@ -36,13 +36,13 @@ export const ProductBar = () => {
 
                                         <CardMedia component={"img"} height={"140"} image={item.img} alt="unsplash image" />
                                         <CardContent>
-                                            <Typography gutterBottom variant="h5" component={"div"} >{item.titel}</Typography>
-                                            <Typography variant="body2" color={"text.secondary"}>
+                                            <Typography gutterBottom variant="h5" component={"div"} >{item.titel} </Typography>
+                                            <Typography variant="body2" color={"text.secondary"} noWrap>
                                                 {item.text}
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Button size="small">Learn more</Button>
+                                            <Button size="large" ><Link to="/productsInformation">View</Link></Button>
 
                                         </CardActions>
                                     </Card>
