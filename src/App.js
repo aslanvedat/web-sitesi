@@ -13,6 +13,7 @@ import { Payment } from "./components/products/Payment";
 import { useState } from "react";
 import { SignUp } from "./components/SignUp";
 import { SignIn } from "./components/SignIn";
+import { UserUpdate } from "./components/UserUpdate";
 //boyutlarla alakali 45. videoya bak!!!
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
                         <Route path="/payment" element={<Payment />} />
                         <Route path="/signUp" element={<SignUp />} />
                         <Route path="/signIn" element={<SignIn />} />
+                        <Route path="/userUpdate" element={<UserUpdate />} />
                     </Routes>
                     <Footer />
                 </BrowserRouter>
